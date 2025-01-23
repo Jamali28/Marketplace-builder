@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <div className="relative h-48">
-        <Image src={image} alt={name} width={100} height={100} className="w-full h-full object-cover" />
+        {/* <Image src="/c.jpg" alt={name} width={200} height={100} className="w-full h-full object-cover" /> */}
       </div>
       <div className="p-4">
         <h2 className="text-lg font-semibold text-gray-800 truncate">{name}</h2>

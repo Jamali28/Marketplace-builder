@@ -77,7 +77,7 @@ export default function Navbar() {
               <PiUserBold />
             </div>
             <div className="text-white text-2xl hover:text-orange-500 transition">
-              <PiHandbagBold />
+             <Link href={"/cartitem"}> <PiHandbagBold /></Link >
             </div>
           </div>
         </div>

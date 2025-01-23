@@ -7,6 +7,7 @@ import Extra from "./Component/extra";
 import Menu from "./Component/Menu";
 import Chef from "./Component/chef";
 import Client from "./Component/Client";
+import BlogPost from "./Component/BlogPost";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
        <Extra />
        <Menu/>
        <Chef />
+       <BlogPost />
             <Client />
           
    </div>

@@ -27,11 +27,11 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row sm:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
               <a href="/foodCatogary">
-                <button className="text-white bg-orange-400 py-2 px-6 rounded text-lg focus:outline-none">
+                <button className="text-white bg-orange-400 py-2 px-6 rounded text-lg focus:outline-none hover:bg-orange-500 transition">
                   Show More
                 </button>
               </a>
-              <button className="flex items-center text-white py-2 px-6 border-2 border-white rounded text-lg focus:outline-none">
+              <button className="flex items-center text-white py-2 px-6 border-2 border-white rounded text-lg focus:outline-none hover:bg-white hover:text-black transition">
                 <IoPlayOutline className="mr-2" />
                 Watch Video
               </button>
@@ -47,14 +47,14 @@ const Home = () => {
               alt="About Us Image 2"
               width={450}
               height={300}
-              className="rounded-lg object-cover w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px]"
+              className="rounded-lg object-cover w-full max-w-[150px] sm:max-w-[200px] md:max-w-[300px] lg:max-w-[350px]"
             />
             <Image
               src="/about3.jpg"
               alt="About Us Image 3"
               width={450}
               height={300}
-              className="rounded-lg object-cover w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px]"
+              className="rounded-lg object-cover w-full max-w-[150px] sm:max-w-[200px] md:max-w-[300px] lg:max-w-[350px]"
             />
           </div>
         </div>
@@ -67,7 +67,7 @@ const Home = () => {
           alt="Experience"
           width={600}
           height={300}
-          className="rounded-lg object-cover max-w-full"
+          className="rounded-lg object-cover w-full max-w-[500px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px]"
         />
       </div>
     </>
