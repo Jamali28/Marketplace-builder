@@ -8,6 +8,7 @@ import Menu from "./Component/Menu";
 import Chef from "./Component/chef";
 import Client from "./Component/Client";
 import BlogPost from "./Component/BlogPost";
+import Tag from "./Component/Tag";
 
 
 export default function Home() {
@@ -17,7 +18,9 @@ export default function Home() {
      <Head />
      <About />
        <Experience />
+      
        <Extra />
+       <Tag />
        <Menu/>
        <Chef />
        <BlogPost />

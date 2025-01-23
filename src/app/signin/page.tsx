@@ -31,36 +31,28 @@ export default function SigninPage() {
         <div className="container mx-auto max-w-md bg-white shadow-lg rounded-md p-6 sm:p-8 md:p-10">
           <h3 className="text-2xl font-bold mb-6 text-center text-black">Sign In</h3>
           <form>
+
+
             {/* Email Input */}
             <div className="mb-4 relative">
+              <h1 className="font-semibold py-2">Email</h1>
               <input
                 type="email"
                 className="w-full border rounded px-3 py-2 pl-10 focus:ring focus:ring-yellow-300"
                 placeholder="Email"
               />
-              <Image
-                src="/EnvelopeSimple.png"
-                alt="Email Icon"
-                width={20}
-                height={20}
-                className="absolute left-3 top-2.5"
-              />
+             
             </div>
 
             {/* Password Input */}
             <div className="mb-4 relative">
+            <h1 className="font-semibold py-2">Password</h1>
               <input
                 type="password"
                 className="w-full border rounded px-3 py-2 pl-10 focus:ring focus:ring-yellow-300"
                 placeholder="Password"
               />
-              <Image
-                src="/Lock.png"
-                alt="Lock Icon"
-                width={20}
-                height={20}
-                className="absolute left-3 top-2.5"
-              />
+              
             </div>
 
             {/* Remember Me Checkbox */}
