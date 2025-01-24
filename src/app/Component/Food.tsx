@@ -1,16 +1,17 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { createClient } from "@sanity/client";
-import ProductCard from "../Component/ProductCard"; 
+import ProductCard from "../Component/ProductCard";
 import Image from "next/image";
-
+import ShopCat from "./ShopCat";
 
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  projectId: "pe7pu33j",
   dataset: "production",
   useCdn: false,
   apiVersion: "2025-01-11",
 });
+
 type Food = {
   _id: string;
   name: string;
@@ -19,9 +20,11 @@ type Food = {
   tags: string[];
   imageUrl: string;
 };
+
 const Food: React.FC = () => {
   const [foods, setFoods] = useState<Food[]>([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchFoods = async () => {
       const query = `*[_type == "food"]{
@@ -43,11 +46,13 @@ const Food: React.FC = () => {
     };
     fetchFoods();
   }, []);
+
   if (loading) {
     return <div className="text-center py-10">Loading foods...</div>;
   }
+
   return (
-<div>
+    <div>
       {/* Header Section */}
       <div className="relative w-screen h-[200px] bg-black">
         {/* Background Image with 30% Opacity */}
@@ -67,26 +72,37 @@ const Food: React.FC = () => {
           </h1>
         </div>
       </div>
-   
 
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-6">Foods</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {foods.map((food) => (
-          <ProductCard
-            key={food._id}
-            image={food.imageUrl}
-            name={food.name}
-            price={`$${food.price}`}
-            discountedPrice={`$${(food.price * 0.8).toFixed(2)}`}
-            discount="20% off"
-            rating={food.rating}
-            reviews={Math.floor(Math.random() * 100)}
-          />
-        ))}
+      <div className="container mx-auto p-4">
+        {/* Main Content Section */}
+        <div className="flex flex-col lg:flex-row gap-6">
+          {/* Product Cards */}
+          <div className="flex-1">
+            <h1 className="text-3xl font-bold mb-6">Foods</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              {foods.map((food) => (
+                <ProductCard
+                  key={food._id}
+                  image={food.imageUrl}
+                  name={food.name}
+                  price={`$${food.price}`}
+                  discountedPrice={`$${(food.price * 0.8).toFixed(2)}`}
+                  discount="20% off"
+                  rating={food.rating}
+                  reviews={Math.floor(Math.random() * 100)}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Right Side: ShopCat Component */}
+          <div className="w-full lg:w-1/3">
+            <ShopCat />
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
+    </div>
   );
 };
+
 export default Food;

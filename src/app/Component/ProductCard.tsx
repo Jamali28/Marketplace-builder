@@ -1,9 +1,18 @@
 import Image from "next/image";
-
-
 import React from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "@/sanity/lib/client";
+ // Adjust the import path to your Sanity client
+
+// Set up Sanity image URL builder
+const builder = imageUrlBuilder(client);
+
+function urlFor(source: any) {
+  return builder.image(source);
+}
+
 interface ProductCardProps {
-  image: string;
+  image: string; // This should be the Sanity image object
   name: string;
   price: string;
   discountedPrice: string;
@@ -11,6 +20,7 @@ interface ProductCardProps {
   rating: number;
   reviews: number;
 }
+
 const ProductCard: React.FC<ProductCardProps> = ({
   image,
   name,
@@ -23,7 +33,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
       <div className="relative h-48">
-        {/* <Image src="/c.jpg" alt={name} width={200} height={100} className="w-full h-full object-cover" /> */}
+        {image && (
+          <Image
+            src={urlFor(image).url()} // Generate the valid URL for the image
+            alt={name}
+            layout="fill"
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
       <div className="p-4">
         <h2 className="text-lg font-semibold text-gray-800 truncate">{name}</h2>
@@ -44,4 +61,5 @@ const ProductCard: React.FC<ProductCardProps> = ({
     </div>
   );
 };
+
 export default ProductCard;
