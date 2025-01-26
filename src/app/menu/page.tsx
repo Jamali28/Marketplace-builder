@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import Tag from '../Component/Tag';
+
 
 const MenuPage: React.FC = () => {
   return (
@@ -114,8 +114,39 @@ const MenuPage: React.FC = () => {
             className="w-full lg:w-1/3"
           />
         </section>
+      
+   {/* Stats Section */}
+<div
+  className="relative bg-cover bg-center bg-no-repeat opacity-80"
+  style={{ backgroundImage: "url('/download.jpeg')" }}
+>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-24 relative z-10">
+    {[
+      { icon: "/a.png", title: "Professional Chefs", count: "420" },
+      { icon: "/b.png", title: "Best Drinks", count: "320" },
+      { icon: "/c.png", title: "Serving Tools", count: "30+" },
+      { icon: "/d.png", title: "Delicious Pizza", count: "220" }
+    ].map((stat, index) => (
+      <div key={index} className="text-center group">
+        {/* Icon Section */}
+        <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
+          <Image
+            src={stat.icon}
+            alt={stat.title}
+            width={120}
+            height={120}
+            className="mx-auto"
+          />
+        </div>
+        {/* Title */}
+        <h3 className="text-white text-xl sm:text-2xl font-bold mb-2">{stat.title}</h3>
+        {/* Count */}
+        <p className="text-[#FF9F0D] text-4xl sm:text-5xl font-bold">{stat.count}</p>
+      </div>
+    ))}
+  </div>
+</div>
 
-        <Tag />
         
         {/* Desserts Section */}
         <section className="flex flex-col lg:flex-row items-center lg:justify-between gap-8 py-16">

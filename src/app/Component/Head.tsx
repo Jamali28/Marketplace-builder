@@ -54,7 +54,8 @@ const HomePage = () => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   <br />Varius sed pharetra dictum neque massa congue
                 </p>
-              <Link href="/food"><button className={`${InterFont.className} px-8 py-3 bg-[#FF9F0D] text-white rounded-full 
+              <Link href="/menu">
+              <button className={`${InterFont.className} px-8 py-3 bg-[#FF9F0D] text-white rounded-full 
                   hover:bg-[#ff8c00] transition-colors duration-300`}>
                   See Menu
                 </button></Link>  

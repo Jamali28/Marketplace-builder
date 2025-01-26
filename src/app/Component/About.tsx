@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa6";
+import Link from "next/link";
 
 function AboutUs() {
   return (
@@ -36,30 +37,32 @@ function AboutUs() {
         </ul>
 
         <div className="flex justify-start mt-8">
-          <button className="bg-[#FF9F0D] text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full text-sm sm:text-base md:text-lg hover:bg-yellow-800 transition-all">
-            See More
-          </button>
+          <Link href="/about">
+            <button className="bg-[#FF9F0D] text-white py-2 px-6 sm:py-3 sm:px-8 rounded-full text-sm sm:text-base md:text-lg hover:bg-yellow-800 transition-all">
+              See More
+            </button>
+          </Link>
         </div>
       </div>
 
       {/* Image Section */}
       <div className="w-full md:w-1/2">
         <Image 
-          src="/about1.jpg" 
+          src="/egg.png" 
           alt="About Us Image 1" 
-          width={100}
-          height={100}
+          width={800} // Use larger dimensions to match display size
+          height={600} 
           className="rounded-lg object-cover w-full h-[250px] sm:h-[350px] md:h-[450px]" 
         />
 
         <div className="grid grid-cols-2 gap-4 mt-6">
-          {["/about2.jpg", "/about3.jpg"].map((src, index) => (
+          {["/s.png", "/sandwich.png"].map((src, index) => (
             <Image 
               key={index}
               src={src} 
               alt={`About Us Image ${index + 2}`} 
-              width={100}
-              height={100}
+              width={400} // Adjust to match the grid size
+              height={300}
               className="rounded-lg object-cover w-full h-[150px] sm:h-[200px] md:h-[250px]" 
             />
           ))}
