@@ -106,19 +106,19 @@ export default function Navbar() {
           <a href="/" className="hover:text-orange-500 transition">
             Home
           </a>
-          <a href="/food" className="hover:text-orange-500 transition">
+          <a href="/menu" className="hover:text-orange-500 transition">
             Menu
           </a>
           <a href="/blog" className="hover:text-orange-500 transition">
             Blog
           </a>
           <a href="/chef" className="hover:text-orange-500 transition">
-            Pages
+            chef
           </a>
           <a href="/about" className="hover:text-orange-500 transition">
             About
           </a>
-          <a href="/shop" className="hover:text-orange-500 transition">
+          <a href="/food" className="hover:text-orange-500 transition">
             Shop
           </a>
           <a href="/signin" className="hover:text-orange-500 transition">
