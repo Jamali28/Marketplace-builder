@@ -46,7 +46,7 @@ const HeroPage = () => {
     { image: "/tikka.jpg", date: "June 25, 2020" }
   ];
 
-  const galleryImages = ["gal1.png", "gal2.png", "gal3.png", "gal4.png", "gal5.png", "gal3.png"];
+  const galleryImages = ["im1.pg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg", "pic8.jpg"];
 
   return (
     <div className="min-h-screen">
@@ -76,7 +76,7 @@ const HeroPage = () => {
           {/* Blog Cards Column */}
           <div className="flex-1 space-y-6 md:space-y-8">
             {[1, 2, 3, 4].map((i) => (
-              <BlogCard key={i} imageSrc={`/Blog/recentpost${i}.jpeg`} />
+              <BlogCard key={i} imageSrc={`/let.jpg`} />
             ))}
           </div>
 

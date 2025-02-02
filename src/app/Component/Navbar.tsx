@@ -1,5 +1,17 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import MyDropdown from "@/components/ui/MyDropdown";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu"
 import Link from "next/link";
 import { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6"; // Magnifying Glass Icon
@@ -42,30 +54,26 @@ export default function Navbar() {
         </div>
 
         {/* Large Screen Navigation */}
-        <div className="hidden lg:flex items-center justify-between flex-1 ml-8">
+        <div className="hidden lg:flex items-center justify-between py-2 flex-1 ml-8">
           {/* Navigation Links */}
           <div className="flex space-x-6">
             <a href="/" className="hover:text-orange-500 transition">
               Home
             </a>
-            <a href="/menu" className="hover:text-orange-500 transition">
+            <a href="/food" className="hover:text-orange-500 transition">
               Menu
             </a>
             <a href="/blog" className="hover:text-orange-500 transition">
-              Blogs
+              Blog
             </a>
-            <a href="/food" className="hover:text-orange-500 transition">
-              Shop
-            </a>
-            
-            <a href="/chef" className="hover:text-orange-500 transition">
-              Pages
+            <a className="hover:text-orange-500 transition">
+            <MyDropdown />
             </a>
             <a href="/about" className="hover:text-orange-500 transition">
               About
             </a>
             <a href="/signin" className="hover:text-orange-500 transition">
-              Sign up
+            Sign In
             </a>
             <a href="/checkout" className="hover:text-orange-500 transition">
               CheckOut
@@ -104,9 +112,6 @@ export default function Navbar() {
           <a href="/blog" className="hover:text-orange-500 transition">
             Blog
           </a>
-          <a href="/food" className="hover:text-orange-500 transition">
-              Shop
-            </a>
           <a href="/chef" className="hover:text-orange-500 transition">
             Pages
           </a>
